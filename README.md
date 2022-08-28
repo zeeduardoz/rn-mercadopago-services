@@ -42,17 +42,6 @@ repositories {
 }
 ```
 
-```java
-// Android required configuration ...
-// Add dependencies in android/app/build.gradle
-
-dependencies {
-  ...
-  implementation 'com.mercadopago.android.px:checkout:4.53.2'
-  implementation 'com.mercadopago.android.px:services:4.53.2'
-}
-```
-
 ---
 
 ## 🌟 Usage

@@ -48,6 +48,7 @@ allprojects {
             }
         }
         google()
-        maven { url 'https://www.jitpack.io' }
+        maven { url 'https://artifacts.mercadolibre.com/repository/android-releases/' }
+        maven { url "https://jitpack.io" }
     }
 }
