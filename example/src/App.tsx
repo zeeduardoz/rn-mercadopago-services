@@ -1,31 +1,33 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'rn-mercadopago-services';
+import { Text, ScrollView } from 'react-native';
+import { setPreferences } from 'rn-mercadopago-services';
+
+import { CreateCardToken } from './hooks/createCardToken';
+import { CreateCardTokenBySaved } from './hooks/createSavedCardToken';
+
+import { mainStyles } from './styles';
+import PREFERENCES from './app.json';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
+  useEffect(() => {
+    setPreferences(PREFERENCES.publicKey, PREFERENCES.privateKey);
   }, []);
 
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <ScrollView
+      showsHorizontalScrollIndicator={false}
+      showsVerticalScrollIndicator={false}
+      style={mainStyles.container}
+    >
+      <Text style={mainStyles.title}>React Native MercadoPago Services</Text>
+
+      {/* ----------------------
+              Services
+      ---------------------- */}
+      <CreateCardToken />
+      <CreateCardTokenBySaved />
+      {/* ---------------------- */}
+    </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});
