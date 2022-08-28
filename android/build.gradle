@@ -2,6 +2,8 @@ buildscript {
   repositories {
       google()
       mavenCentral()
+
+      maven { url 'https://artifacts.mercadolibre.com/repository/android-releases/' }
   }
 
   dependencies {
@@ -54,6 +56,9 @@ android {
 repositories {
   mavenCentral()
   google()
+
+  maven { url 'https://artifacts.mercadolibre.com/repository/android-releases/' }
+  maven { url "https://jitpack.io" }
 
   def found = false
   def defaultDir = null
@@ -114,7 +119,7 @@ repositories {
   }
 
   if (!found) {
-    throw new GradleException(
+    throw new FileNotFoundException(
       "${project.name}: unable to locate React Native android sources. " +
       "Ensure you have you installed React Native as a dependency in your project and try again."
     )
@@ -123,9 +128,12 @@ repositories {
 
 
 dependencies {
-    //noinspection GradleDynamicVersion
+  //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
-// From node_modules
+
+  implementation 'com.mercadopago.android.px:checkout:4.53.2'
+  implementation 'com.mercadopago.android.px:services:4.53.2'
+  // From node_modules
 }
 
 if (isNewArchitectureEnabled()) {
