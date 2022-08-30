@@ -1,7 +1,7 @@
 {
   "name": "rn-mercadopago-services",
   "version": "1.0.0",
-  "description": "test",
+  "description": "Package for react native with MercadoPago services",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
@@ -32,6 +32,9 @@
   },
   "keywords": [
     "react-native",
+    "mercadopago",
+    "mercadopago-api",
+    "mercadopago-services",
     "ios",
     "android"
   ],
@@ -65,7 +68,8 @@
     "react-native": "0.68.2",
     "react-native-builder-bob": "^0.18.3",
     "release-it": "^15.0.0",
-    "typescript": "^4.5.2"
+    "typescript": "^4.5.2",
+    "ts-node": "^10.9.1"
   },
   "resolutions": {
     "@types/react": "17.0.21"
@@ -150,8 +154,5 @@
         }
       ]
     ]
-  },
-  "dependencies": {
-    "ts-node": "^10.9.1"
   }
 }
