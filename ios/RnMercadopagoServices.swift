@@ -1,14 +1,16 @@
+import MercadoPagoDevicesSDK
+
 @objc(RnMercadopagoServices)
 class RnMercadopagoServices: NSObject {
 
-  @objc(getDevice:withResolver:withRejecter:)
+  @objc(getDevice:withRejecter:)
   func getDevice(resolve:RCTPromiseResolveBlock,reject:RCTPromiseRejectBlock) -> Void {
-    resolve(a*b)
-
     do {
-      
+        MercadoPagoDevicesSDK.shared.execute()
+        let json = MercadoPagoDevicesSDK.shared.getInfoAsJsonString()
+        resolve(json)
     } catch let error {
-      reject(error.localizedDescription)
+        reject(error.localizedDescription)
     }
   }
 }

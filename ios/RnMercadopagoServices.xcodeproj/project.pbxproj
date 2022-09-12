@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E555C0D2413F4C50049A1A2 /* RnMercadopagoServices.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RnMercadopagoServices.m */; };
-		F4FF95D7245B92E800C19C63 /*  RnMercadopagoServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /*  RnMercadopagoServices.swift */; };
+		9B42E059534119231313A3F7 /* Pods_RnMercadopagoServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C49B6C3B196871295D4DAB1 /* Pods_RnMercadopagoServices.framework */; };
+		F4FF95D7245B92E800C19C63 /* RnMercadopagoServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FF95D6245B92E800C19C63 /* RnMercadopagoServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +25,9 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRnMercadopagoServices.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRnMercadopagoServices.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		34A1718F66E54358FE6EB176 /* Pods-RnMercadopagoServices.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RnMercadopagoServices.release.xcconfig"; path = "Target Support Files/Pods-RnMercadopagoServices/Pods-RnMercadopagoServices.release.xcconfig"; sourceTree = "<group>"; };
+		4C49B6C3B196871295D4DAB1 /* Pods_RnMercadopagoServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RnMercadopagoServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EC35F722353FAB572A4E1B6 /* Pods-RnMercadopagoServices.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RnMercadopagoServices.debug.xcconfig"; path = "Target Support Files/Pods-RnMercadopagoServices/Pods-RnMercadopagoServices.debug.xcconfig"; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RnMercadopagoServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RnMercadopagoServices.m; sourceTree = "<group>"; };
 		F4FF95D5245B92E700C19C63 /* RnMercadopagoServices-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RnMercadopagoServices-Bridging-Header.h"; sourceTree = "<group>"; };
 		F4FF95D6245B92E800C19C63 /* RnMercadopagoServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RnMercadopagoServices.swift; sourceTree = "<group>"; };
@@ -35,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B42E059534119231313A3F7 /* Pods_RnMercadopagoServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,7 +60,26 @@
 				B3E7B5891CC2AC0600A0062D /* RnMercadopagoServices.m */,
 				F4FF95D5245B92E700C19C63 /* RnMercadopagoServices-Bridging-Header.h */,
 				134814211AA4EA7D00B7C361 /* Products */,
+				B0CF02FCEB531D90CD5DFDC4 /* Pods */,
+				C9D3EFD29EAAB857C1F80014 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		B0CF02FCEB531D90CD5DFDC4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9EC35F722353FAB572A4E1B6 /* Pods-RnMercadopagoServices.debug.xcconfig */,
+				34A1718F66E54358FE6EB176 /* Pods-RnMercadopagoServices.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		C9D3EFD29EAAB857C1F80014 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C49B6C3B196871295D4DAB1 /* Pods_RnMercadopagoServices.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -66,6 +89,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RnMercadopagoServices" */;
 			buildPhases = (
+				B67E25CF73666E2A10D30039 /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
 				58B511D91A9E6C8500147676 /* CopyFiles */,
@@ -111,13 +135,37 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B67E25CF73666E2A10D30039 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RnMercadopagoServices-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F4FF95D7245B92E800C19C63 /* RnMercadopagoServices.swift in Sources */,
-				B3E7B58A1CC2AC0600A0062D /* RnMercadopagoServices.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +269,7 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EC35F722353FAB572A4E1B6 /* Pods-RnMercadopagoServices.debug.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -228,6 +277,7 @@
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RnMercadopagoServices;
@@ -240,6 +290,7 @@
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34A1718F66E54358FE6EB176 /* Pods-RnMercadopagoServices.release.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -247,6 +298,7 @@
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = RnMercadopagoServices;
