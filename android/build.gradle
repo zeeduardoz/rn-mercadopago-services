@@ -131,8 +131,7 @@ dependencies {
   //noinspection GradleDynamicVersion
   implementation "com.facebook.react:react-native:+"
 
-  implementation 'com.mercadopago.android.px:checkout:4.53.2'
-  implementation 'com.mercadopago.android.px:services:4.53.2'
+  implementation 'com.mercadolibre.android.device:sdk:2.0.1'
   // From node_modules
 }
 

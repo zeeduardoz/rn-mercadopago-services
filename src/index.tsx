@@ -1,6 +1,6 @@
 import { NativeModules, Platform } from 'react-native';
 
-import type { ICardToken, IPrivateKey, IPublicKey } from './@types/mercadopago';
+import type { ICardToken, IPublicKey } from './@types/mercadopago';
 
 const LINKING_ERROR =
   `The package 'rn-mercadopago-services' doesn't seem to be linked. Make sure: \n\n` +
@@ -19,14 +19,8 @@ const RnMercadopagoServices = NativeModules.RnMercadopagoServices
       }
     );
 
-export const setPreferences = (
+export const CardToken = async (
   public_key: IPublicKey,
-  private_key: IPrivateKey
-) => {
-  return RnMercadopagoServices.setPreferences(public_key, private_key);
-};
-
-export const createCardToken = async (
   cardNumber: string,
   expirationMonth: number,
   expirationYear: number,
@@ -36,31 +30,35 @@ export const createCardToken = async (
   identificationNumber: string
 ): Promise<ICardToken | string> => {
   try {
-    const response = await RnMercadopagoServices.createCardToken(
-      cardNumber,
-      expirationMonth,
-      expirationYear,
-      securityCode,
-      cardholderName,
-      identificationType,
-      identificationNumber
-    );
-    return response;
-  } catch (err: any) {
-    return err.message;
-  }
-};
+    const device = await RnMercadopagoServices.getDevice();
 
-export const createCardTokenBySaved = async (
-  cardId: string,
-  securityCode: string
-): Promise<ICardToken | string> => {
-  try {
-    const response = await RnMercadopagoServices.createCardTokenBySaved(
-      cardId,
-      securityCode
+    const body = {
+      site_id: 'MLB',
+      card_number: cardNumber,
+      expiration_year: expirationYear,
+      expiration_month: expirationMonth,
+      security_code: securityCode,
+      cardholder: {
+        identification: {
+          type: identificationType,
+          number: identificationNumber,
+        },
+        name: cardholderName,
+      },
+      device,
+    };
+
+    const response = await fetch(
+      `https://api.mercadopago.com/v1/card_tokens?public_key=${public_key}`,
+      {
+        method: 'POST',
+        body: JSON.stringify(body),
+      }
     );
-    return response;
+
+    const data = await response.json();
+
+    return data;
   } catch (err: any) {
     return err.message;
   }

@@ -265,9 +265,6 @@ dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
-    implementation 'com.mercadopago.android.px:checkout:4.53.2'
-    implementation 'com.mercadopago.android.px:services:4.53.2'
-
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {

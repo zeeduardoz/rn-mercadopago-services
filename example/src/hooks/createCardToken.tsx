@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 
-import { createCardToken } from 'rn-mercadopago-services';
+import { CardToken } from 'rn-mercadopago-services';
 
 import { hooksStyles } from '../styles';
 import { CARD_INFO } from './mock';
+import PREFERENCES from '../app.json';
 
 export const CreateCardToken = () => {
   const [result, setResult] = useState<string>('');
 
   const handleExample = async () => {
     try {
-      const response = await createCardToken(
+      const response = await CardToken(
+        PREFERENCES.publicKey,
         CARD_INFO.cardNumber,
         CARD_INFO.expirationMonth,
         CARD_INFO.expirationYear,
