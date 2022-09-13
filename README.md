@@ -18,48 +18,15 @@ yarn add rn-mercadopago-services
 
 ---
 
-## 💡 Setup
-
-```java
-// Android required configuration ...
-// Add dependencies in android/app/build.gradle
-
-dependencies {
-  ...
-  implementation 'com.mercadopago.android.px:checkout:4.53.2'
-  implementation 'com.mercadopago.android.px:services:4.53.2'
-}
-```
-
-```java
-// Android required configuration ...
-// Add dependencies in android/build.gradle
-
-repositories {
-  ...
-  maven { url 'https://www.jitpack.io' }
-  maven { url 'https://artifacts.mercadolibre.com/repository/android-releases/' }
-}
-```
-
----
-
 ## 🌟 Usage
 
 ```js
-// Initial config ...
+// Example get Card Token for payments checkout transparent ...
 
-import { setPreferences } from 'rn-mercadopago-services';
+import { CardToken } from 'rn-mercadopago-services';
 
-setPreferences(publicKey, privateKey);
-```
-
-```js
-// Example create card token ...
-
-import { createCardToken } from 'rn-mercadopago-services';
-
-const response = await createCardToken(
+const response = await CardToken(
+  publicKey,
   cardNumber,
   expirationMonth,
   expirationYear,
