@@ -4,7 +4,7 @@
 [![Downloads](https://img.shields.io/npm/dt/rn-mercadopago-services.svg)](http://npmjs.com/package/rn-mercadopago-services)
 [![License](https://img.shields.io/apm/l/vim-mode)](https://github.com/zeeduardoz/rn-mercadopago-services)
 
-Serving all MercadoPago users who use react native in their application, the gateway in turn does not have support for react native and the community is very small, so we created a lib using the native services of MercadoPago to make it easier in react native.
+Serving all MercadoPago users who use react native in their application, the gateway in turn does not have support for react native and the MercadoPago community is very small, so we created a lib using the native services of MercadoPago to facilitate the use.
 
 ---
 
@@ -14,6 +14,21 @@ Serving all MercadoPago users who use react native in their application, the gat
 npm install rn-mercadopago-services
 
 yarn add rn-mercadopago-services
+```
+
+---
+
+## 🌟 Setup
+
+```java
+
+// Add in build.gradle
+
+repositories {
+  ...
+  maven { url 'https://artifacts.mercadolibre.com/repository/android-releases/' }
+}
+
 ```
 
 ---
