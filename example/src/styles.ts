@@ -6,7 +6,6 @@ export const mainStyles = StyleSheet.create({
     padding: 24,
   },
   title: {
-    fontFamily: 'Helvetica New',
     fontSize: 24,
     fontWeight: 'bold',
     color: '#ffffff',
@@ -22,14 +21,12 @@ export const hooksStyles = StyleSheet.create({
     paddingVertical: 32,
   },
   title: {
-    fontFamily: 'Helvetica New',
     fontSize: 18,
     fontWeight: 'bold',
     color: '#ffffff',
     textAlign: 'center',
   },
   result: {
-    fontFamily: 'Helvetica New',
     fontSize: 14,
     color: '#f5ad42',
     marginVertical: 12,

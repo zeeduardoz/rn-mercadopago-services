@@ -3,6 +3,11 @@
 @interface RCT_EXTERN_MODULE(RnMercadopagoServices, NSObject)
 
 RCT_EXTERN_METHOD(getDevice: (RCTPromiseResolveBlock)resolve
-                  withRejecter:(RCTPromiseRejectBlock)reject)
+                  rejecter: (RCTPromiseRejectBlock)reject)
+
++ (BOOL)requiresMainQueueSetup
+{
+  return NO;
+}
 
 @end

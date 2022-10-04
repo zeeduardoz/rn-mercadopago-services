@@ -1,6 +1,0 @@
-framework module MercadoPagoDevicesSDK {
-  umbrella header "MercadoPagoDevicesSDK-umbrella.h"
-
-  export *
-  module * { export * }
-}
