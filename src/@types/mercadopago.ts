@@ -57,3 +57,17 @@ export interface ICardToken {
   card_number_length: number;
   security_code_length: number;
 }
+
+export interface ICardTokenByCardId {
+  id: string;
+  public_key: string;
+  card_id: string;
+  status: string;
+  date_created: string;
+  date_last_updated: string;
+  date_due: string;
+  luhn_validation: boolean;
+  live_mode: boolean;
+  require_esc: boolean;
+  security_code_length: number;
+}

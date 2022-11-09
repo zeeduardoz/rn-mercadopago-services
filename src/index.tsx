@@ -1,6 +1,10 @@
 import { NativeModules, Platform } from 'react-native';
 
-import type { ICardToken, IPublicKey } from './@types/mercadopago';
+import type {
+  ICardToken,
+  ICardTokenByCardId,
+  IPublicKey,
+} from './@types/mercadopago';
 
 const LINKING_ERROR =
   `The package 'rn-mercadopago-services' doesn't seem to be linked. Make sure: \n\n` +
@@ -46,6 +50,43 @@ export const CardToken = async (
         name: cardholderName,
       },
       device,
+    };
+
+    const response = await fetch(
+      `https://api.mercadopago.com/v1/card_tokens?public_key=${public_key}`,
+      {
+        method: 'POST',
+        body: JSON.stringify(body),
+      }
+    );
+
+    const data = await response.json();
+
+    return data;
+  } catch (err: any) {
+    return err.message;
+  }
+};
+
+export const CardTokenByCardId = async (
+  public_key: IPublicKey,
+  cardId: string,
+  securityCode: string,
+  cardholderName: string,
+  identificationType: string,
+  identificationNumber: string
+): Promise<ICardTokenByCardId | string> => {
+  try {
+    const body = {
+      cardId,
+      cardholder: {
+        identification: {
+          type: identificationType,
+          number: identificationNumber,
+        },
+        name: cardholderName,
+      },
+      security_code: securityCode,
     };
 
     const response = await fetch(
